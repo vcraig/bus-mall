@@ -7,23 +7,30 @@
 * CREDIT Doug for image files
 
 ## Tech reqs
-F - Look and feel - custom font, color palette, layout with SEMANTIC HTML.
-F - Display 3 random product images, in a row.
-F - Event: user click one image
-B - error handling for extraneous clicks
-B - Store click data
-F - Display 3 new random product images, WITHOUT repeating from prior display
-F - Iterate the click/storage cycle UNTIL user inputs 25 correct clicks
-F - After 25 correct clicks, display "show results" link AND disable user's ability to click.
-B - Data calcs:
-      per image - total number of clicks
-      per image - percentage of times that an image was clicked when it was displayed
-      per image - percentage of times that an image was displayed
-      calculations.
-F - Display data results
+- consistent readable names for classes, functions, variables
+- FOR A BETTER RESULT:
+    - work in small chunks
+    - plan your work. work your plan.
+    - a-c-p frequently.
+
+FLOW
+* Look and feel - custom font, color palette, layout with SEMANTIC HTML.
+* Display 3 random product images, in a row.
+* Event: user click one image
+* error handling for extraneous clicks
+* Store click data
+* Display 3 new random product images, WITHOUT repeating from prior display
+* Iterate the click/storage cycle UNTIL user inputs 25 correct clicks
+* After 25 correct clicks, display "show results" button AND disable user's ability to click.
+* Data calcs:
+    - per image - total number of clicks
+    - per image - percentage of times that an image was clicked when it was displayed
+    - per image - percentage of times that an image was displayed
+    - calculations.
+* Display data results on click of "show results link"
 
 
-## Back end reqs
+
 
 
 

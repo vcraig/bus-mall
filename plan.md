@@ -1,5 +1,18 @@
 #Plan for Bus Mall
 
+Process from Nadia
+after my pseudo
+Get 3 random boxes
+Click function
+  Get console log that tells you which image slot you are clicking on
+  console log the name of the object your're on
+  get random
+  start tabulating values
+    tabulate viewed items
+    tabul clicked items
+    
+
+
 ## Business Reqs
 * Orient to a lean startup who watches expenditures
 * GOAL of web site: do market analysis on proposed products to test customer interest.

@@ -1,4 +1,4 @@
-#Plan for Bus Mall
+<!-- #Plan for Bus Mall
 
 Process from Nadia
 after my pseudo
@@ -10,7 +10,7 @@ Click function
   start tabulating values
     tabulate viewed items
     tabul clicked items
-    
+     -->
 
 
 ## Business Reqs

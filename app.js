@@ -1,24 +1,25 @@
 // Bus Mall
 
-// PUT ONE RANDOM PIC on the page!!!
-
+// global variables
 var productArray = [];
 var counter = 0;
+
 // Object Constructor
 function Product(name, path) {
   this.name = name;
   this.path = path;
-  this.shown = 0;
-  this.clicked = 0;
-  productArray.push(this);    // push objects into ObjectBank
+  this.displayCount = 0;
+  this.clickCount = 0;
+  productArray.push(this);    // push objects into productArray
 }
 
 var bag = new Product('bag','img/bag.jpg');
 var banana = new Product('banana','img/banana.jpg');
 var bathroom = new Product('bathroom','img/bathroom.jpg');
+var boots = new Product('boots','img/boots.jpg');
 // add all other pic variables here
 
-
+// display 3 random pics in a row
 function show3Pics() {
   var pic1 = document.getElementById('pic1');
   var pic2 = document.getElementById('pic2');
@@ -29,37 +30,24 @@ function show3Pics() {
 }
 show3Pics();
 
-//add event listener
+// event listener
 var imageContainer = document.getElementById('image-container');
 imageContainer.addEventListener('click', handleImageClick);
 
+// on click
 function handleImageClick(event) {
-  //add more things -- tally total clicks, whic pic clicked, incerment number times each pic shown  -- SEE CODE PEN
-  console.log('it clicked');
-  counter++;
-  console.log('count is ' + counter);
-  if (counter > 25) {
+  //add more things -- tally total clicks, which pic clicked, incerment number times each pic shown  -- SEE CODE PEN
+  if (counter < 25) {
     show3Pics();
+    counter++;
+    console.log('click count is ' + counter);
+    // add to this.clickCount = 0;
+  }
+  else {
+    console.log('need to display the results button');
   }
 }
-
-
 
 function randIndex() {
   return Math.floor(Math.random() * productArray.length);
 }
-
-
-
-// for (var i=0; i<26, i++) {   // for testing duplicates
-// }
-
-// Function
-// generate randNum -- a random number between 0 and 19
-// // look at mdn docs
-//
-// Function // this func is to put one random pic on the page
-// get the string value that corresponds to imageBank array index randNum
-// access the DOM id "pic1"
-// fill the img element with: "src="string value" ""
-// append "src="string value" ""

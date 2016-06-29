@@ -2,6 +2,7 @@
 // global variables
 var productArray = [];
 var totalClicksCounter = 0;
+var currentIndicies = [];
 
 // Object Constructor
 function Product(name, path) {
@@ -54,7 +55,6 @@ imageContainer.addEventListener('click', handleImageClick);
 function handleImageClick(event) {
   for (var i = 0; i < productArray.length; i++) {
     if (event.target.alt === productArray[i].name) {
-      // console.log('event.target.alt === ',productArray[i].name);
       productArray[i].clickCount += 1;
       console.log('productArray[i].clickCount ', productArray[i].clickCount);
     }
@@ -73,3 +73,14 @@ function handleImageClick(event) {
 function randIndex() {
   return Math.floor(Math.random() * productArray.length);
 }
+
+// make array of three unique random numbers, and don't repeat numbers from prior array.
+
+function makeThreeIndices() {
+  var firstIndex = randIndex();
+  while (firstIndex === currentIndicies[0] || firstIndex === currentIndicies[1] || firstIndex === currentIndicies[2]) {
+    firstIndex = randIndex();
+  }
+  console.log(firstIndex, ' = firstIndex');
+}
+makeThreeIndices();

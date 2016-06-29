@@ -3,6 +3,9 @@
 var productArray = [];
 var totalClicksCounter = 0;
 var currentIndicies = [];
+var firstIndex = 0;
+var secondIndex = 0;
+var thirdIndex = 0;
 
 // Object Constructor
 function Product(name, path) {
@@ -21,29 +24,53 @@ var water_can = new Product('water-can','img/water-can.jpg');
 var wine_glass = new Product('wine-glass','img/wine-glass.jpg');
 // add all other pic variables here
 
+// make array of three unique random numbers, and don't repeat numbers from prior array.
+
+function makeThreeIndicies() {
+  var firstIndex = randIndex();
+  while (firstIndex === currentIndicies[0] || firstIndex === currentIndicies[1] || firstIndex === currentIndicies[2]) {
+    firstIndex = randIndex();
+  }
+  var secondIndex = randIndex();
+  while (secondIndex === firstIndex || secondIndex === currentIndicies[0] || secondIndex === currentIndicies[1] || secondIndex === currentIndicies[2]) {
+    secondIndex = randIndex();
+  }
+  // console.log(secondIndex, ' = secondIndex');
+  var thirdIndex = randIndex();
+  while (thirdIndex === firstIndex || thirdIndex === secondIndex || thirdIndex === currentIndicies[0] || thirdIndex === currentIndicies[1] || thirdIndex === currentIndicies[2]) {
+    thirdIndex = randIndex();
+  }
+  // console.log(thirdIndex, ' = thirdIndex');
+  currentIndicies = [firstIndex, secondIndex, thirdIndex];
+  return currentIndicies;
+}
+// makeThreeIndicies();
+
 // display 3 random pics in a row
 function show3Pics() {
+  var indicies = makeThreeIndicies();
+  console.log(indicies);
 //pic1st
   var pic1st = document.getElementById('pic1st');
-  var pic1stRand = randIndex();
-  pic1st.src = productArray[pic1stRand].path;
-  pic1st.alt = productArray[pic1stRand].name;
-  productArray[pic1stRand].displayCount += 1;
-  pic1stImgName = productArray[pic1stRand].name;
+  var pic1stRand = productArray[indicies[0]];
+  pic1st.src = pic1stRand.path;
+  pic1st.alt = pic1stRand.name;
+  pic1stRand.displayCount += 1;
+  pic1stImgName = pic1stRand.name;
 //pic2nd
   var pic2nd = document.getElementById('pic2nd');
-  var pic2ndRand = randIndex();
-  pic2nd.src = productArray[pic2ndRand].path;
-  pic2nd.alt = productArray[pic2ndRand].name;
-  productArray[pic2ndRand].displayCount += 1;
-  pic2ndImgName = productArray[pic2ndRand].name;
+  var pic2ndRand = productArray[indicies[1]];
+  pic2nd.src = pic2ndRand.path;
+  pic2nd.alt = pic2ndRand.name;
+  pic2ndRand.displayCount += 1;
+  pic2ndImgName = pic2ndRand.name;
 //pic3rd
   var pic3rd = document.getElementById('pic3rd');
-  var pic3rdRand = randIndex();
-  pic3rd.src = productArray[pic3rdRand].path;
-  pic3rd.alt = productArray[pic3rdRand].name;
-  productArray[pic3rdRand].displayCount += 1;
-  pic3rdImgName = productArray[pic3rdRand].name;
+  var pic3rdRand = productArray[indicies[2]];
+  pic3rd.src = pic3rdRand.path;
+  pic3rd.alt = pic3rdRand.name;
+  pic3rdRand.displayCount += 1;
+  pic3rdImgName = pic3rdRand.name;
 }
 show3Pics();
 
@@ -63,6 +90,7 @@ function handleImageClick(event) {
     show3Pics();
     totalClicksCounter++;
     console.log('Total click count is ' + totalClicksCounter);
+    localStorage.totalClicks = JSON.stringify(totalClicksCounter);
 
   }
   else {
@@ -74,13 +102,8 @@ function randIndex() {
   return Math.floor(Math.random() * productArray.length);
 }
 
-// make array of three unique random numbers, and don't repeat numbers from prior array.
+//Display results in table
+// console.log('productArray.displayCount = ', productArray.displayCount);
+// this.clickCount = 0;
 
-function makeThreeIndices() {
-  var firstIndex = randIndex();
-  while (firstIndex === currentIndicies[0] || firstIndex === currentIndicies[1] || firstIndex === currentIndicies[2]) {
-    firstIndex = randIndex();
-  }
-  console.log(firstIndex, ' = firstIndex');
-}
-makeThreeIndices();
+// Use local storage to store your voting data! The goal is to have all of your data persist through a page refresh or through completely closing the browser. //access local storage on page load

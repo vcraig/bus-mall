@@ -102,6 +102,15 @@ function randIndex() {
   return Math.floor(Math.random() * productArray.length);
 }
 
+
+// button display to block
+// get data arrays organized and gettable.
+// calc the required array for the bar chart.
+// display the chart
+// error handling - clicks in container
+// look and feel
+// need to add reset style sheet
+
 //Display results in table
 // console.log('productArray.displayCount = ', productArray.displayCount);
 // this.clickCount = 0;

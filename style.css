@@ -7,6 +7,11 @@ img {
   height: 150px;
   width: 150px;
 }
-button {
-display: none;
+#hidebutton {
+  display: none;
+}
+
+#blockbutton
+{
+  display: block;
 }

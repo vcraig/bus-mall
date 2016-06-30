@@ -95,6 +95,10 @@ function handleImageClick(event) {
   }
   else {
     console.log('need to display the results button');
+    var startButton = document.getElementById('hidebutton');
+    // startButton.className = 'hidden';
+    console.log('startButton is ', startButton);
+    startButton.ID = 'blockbutton';
   }
 }
 

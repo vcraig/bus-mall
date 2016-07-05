@@ -98,7 +98,7 @@ function handleImageClick(event) {
     var startButton = document.getElementById('hidebutton');
     // startButton.className = 'hidden';
     console.log('startButton is ', startButton);
-    startButton.ID = 'blockbutton';
+    startButton.IDname = 'blockbutton';
   }
 }
 

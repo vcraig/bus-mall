@@ -1,6 +1,14 @@
 # bus-mall
 Code 201 Lab - Clicktracker
 
+##
+Attributions
+Reset style sheet:
+ http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+
+
 #To Do List
 // button display to block
 // get data arrays organized and gettable.

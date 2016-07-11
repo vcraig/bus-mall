@@ -22,7 +22,17 @@ var boots = new Product('boots','img/boots.jpg');
 var usb = new Product('usb','img/usb.jpg');
 var water_can = new Product('water-can','img/water-can.jpg');
 var wine_glass = new Product('wine-glass','img/wine-glass.jpg');
-// add all other pic variables here
+var chair = new Product('chair','img/chair.jpg');
+var cthulhu = new Product('cthulhu','img/cthulhu.jpg');
+var dogduck = new Product('dogduck','img/dogduck.jpg');
+var pen = new Product('pen','img/pen.jpg');
+var petsweep = new Product('petsweep','img/petsweep.jpg');
+var tauntaun = new Product('tauntaun','img/tauntaun.jpg');
+var baby = new Product('baby','img/baby.png');
+var dragon = new Product('dragon','img/dragon.png');
+var scissors = new Product('scissors','img/scissors.png');
+var shark = new Product('shark','img/shark.png');
+var unicorn = new Product('unicorn','img/unicorn.png');
 
 // make array of three unique random numbers, and don't repeat numbers from prior array.
 

@@ -48,11 +48,9 @@ img {
   outline: 2px solid black;
   margin: 20px 30px;
 }
-#hidebutton {
+#resultsbutton {
   display: none;
-}
-
-#blockbutton
-{
-  display: block;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
 }

@@ -6,6 +6,7 @@ var currentIndicies = [];
 var firstIndex = 0;
 var secondIndex = 0;
 var thirdIndex = 0;
+var resultsButton = document.getElementById('resultsbutton');
 
 // Object Constructor
 function Product(name, path) {
@@ -33,6 +34,8 @@ var dragon = new Product('dragon','img/dragon.png');
 var scissors = new Product('scissors','img/scissors.png');
 var shark = new Product('shark','img/shark.png');
 var unicorn = new Product('unicorn','img/unicorn.png');
+var bubblegum = new Product('bubblegum','img/bubblegum.jpg');
+var breakfast = new Product('breakfast','img/breakfast.png');
 
 // make array of three unique random numbers, and don't repeat numbers from prior array.
 
@@ -105,17 +108,17 @@ function handleImageClick(event) {
   }
   else {
     console.log('need to display the results button');
-    var startButton = document.getElementById('hidebutton');
-    // startButton.className = 'hidden';
-    console.log('startButton is ', startButton);
-    startButton.IDname = 'blockbutton';
+    resultsButton.style.display = 'block';
+
+    // var startButton = document.getElementById('hidebutton');
+    // console.log('startButton is ', startButton);
+    // startButton.IDname = 'blockbutton';
   }
 }
 
 function randIndex() {
   return Math.floor(Math.random() * productArray.length);
 }
-
 
 // button display to block
 // get data arrays organized and gettable.

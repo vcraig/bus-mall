@@ -7,6 +7,8 @@ var firstIndex = 0;
 var secondIndex = 0;
 var thirdIndex = 0;
 var resultsButton = document.getElementById('resultsbutton');
+var clickCountArray = [];
+var displayCountArray = [];
 
 // Object Constructor
 function Product(name, path) {
@@ -37,8 +39,7 @@ var unicorn = new Product('unicorn','img/unicorn.png');
 var bubblegum = new Product('bubblegum','img/bubblegum.jpg');
 var breakfast = new Product('breakfast','img/breakfast.png');
 
-// make array of three unique random numbers, and don't repeat numbers from prior array.
-
+// make array of three unique random numbers, unique against prior array.
 function makeThreeIndicies() {
   var firstIndex = randIndex();
   while (firstIndex === currentIndicies[0] || firstIndex === currentIndicies[1] || firstIndex === currentIndicies[2]) {
@@ -53,11 +54,9 @@ function makeThreeIndicies() {
   while (thirdIndex === firstIndex || thirdIndex === secondIndex || thirdIndex === currentIndicies[0] || thirdIndex === currentIndicies[1] || thirdIndex === currentIndicies[2]) {
     thirdIndex = randIndex();
   }
-  // console.log(thirdIndex, ' = thirdIndex');
   currentIndicies = [firstIndex, secondIndex, thirdIndex];
   return currentIndicies;
 }
-// makeThreeIndicies();
 
 // display 3 random pics in a row
 function show3Pics() {
@@ -107,12 +106,8 @@ function handleImageClick(event) {
 
   }
   else {
-    console.log('need to display the results button');
     resultsButton.style.display = 'block';
-
-    // var startButton = document.getElementById('hidebutton');
-    // console.log('startButton is ', startButton);
-    // startButton.IDname = 'blockbutton';
+    alert('You have completed your tasks successfully. Thank you for your help!');
   }
 }
 
@@ -120,16 +115,10 @@ function randIndex() {
   return Math.floor(Math.random() * productArray.length);
 }
 
-// button display to block
-// get data arrays organized and gettable.
-// calc the required array for the bar chart.
-// display the chart
-// error handling - clicks in container
-// look and feel
-// need to add reset style sheet
+// =================
 
-//Display results in table
-// console.log('productArray.displayCount = ', productArray.displayCount);
-// this.clickCount = 0;
-
-// Use local storage to store your voting data! The goal is to have all of your data persist through a page refresh or through completely closing the browser. //access local storage on page load
+//calcs for chart display
+// A. total number of clicks, = totalClicksCounter (counts to 25 and goes no higher)
+// B. number of times product [6] was displayed = productArray[6].displayCount - got to displayCountArray = [];
+// C. number of times product [1] was clicked = productArray[1].clickCount got to var clickCountArray = [];
+// D. percentage of times item was clicked when it was shown.  D = C/B

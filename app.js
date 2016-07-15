@@ -135,6 +135,9 @@ function chartArrays() {
     clicked[i] = productArray[i].clickCount;
     displayed[i] = productArray[i].displayCount;
     percentClicked[i] = (productArray[i].clickCount / productArray[i].displayCount).toFixed(2);
+    localStorage.clicked = JSON.stringify(clicked);
+    localStorage.displayed = JSON.stringify(displayed);
+    localStorage.percentClicked = JSON.stringify(percentClicked);
   }
 }
 var data = {

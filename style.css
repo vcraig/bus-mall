@@ -5,7 +5,7 @@
 
 body {
   width: 960px;
-  background-color: #EAE4EF;
+  background-color: #fff;
   color: #000;
   font-family: 'Open Sans', sans-serif;
   padding: 20px;
@@ -20,8 +20,8 @@ p {
 header, footer {
   height: auto;
   width: 100%;
-  background-color: #170642;
-  color: #BFBAA1;
+  background-color: #3347B2;
+  color: #FFD963;
 }
 
 header h1 {
@@ -49,6 +49,10 @@ img {
   margin: 20px 30px;
 }
 
+.image-row {
+  margin-left: 100px;
+}
+
 .results {
   height: 500px;
   width: auto;
@@ -56,15 +60,15 @@ img {
 }
 
 canvas {
-  outline: 2px solid black;
+  /*outline: 2px solid black;*/
 }
 
 #resultsbutton {
   display: none;
-  background-color: #4CAF50; /* Green */
+  background-color: #FFD963; /* Green */
   height: 35px;
   width: 150px;
-  color: white;
+  color: 000;
   font-size: 16px;
 }
 

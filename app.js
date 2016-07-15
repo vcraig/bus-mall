@@ -108,9 +108,14 @@ function handleImageClick(event) {
   else {
     resultsButton.style.display = 'block';
     alert('You have completed your tasks successfully. Thank you for your help!');
-    makeChart();
   }
 }
+
+//Event listener
+resultsButton.addEventListener('click', function(){
+  makeChart();
+  resultsButton.style.display = 'none';
+});
 
 function randIndex() {
   return Math.floor(Math.random() * productArray.length);
@@ -134,11 +139,17 @@ function chartArrays() {
 }
 var data = {
   labels: products,
-  datasets: [
+  datasets : [ {
+    label: 'Number of Displays',
+    backgroundColor: '#637BFF',
+    data : displayed
+  },
     {
-      data: clicked,
-    }]
-};
+      label: 'Number of Clicks',
+      backgroundColor: '#FFD963',
+      data: clicked
+    }
+]};
 
 function makeChart() {
   var ctx = document.getElementById('resultschart').getContext('2d');
@@ -146,12 +157,10 @@ function makeChart() {
     type: 'bar',
     data: data,
     options: {
-      responsive: true
-    },
-    scales: {
-      yAxes: [{
-
-      }]
+      title: {
+        display: true,
+        text: 'Products Selected - This Test Session'
+      }
     }
   });
   chartDrawn = true;

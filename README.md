@@ -16,10 +16,7 @@ https://cdnjs.com/libraries/Chart.js/1.0.2
 
 
 #To Do List
-// button display to block
-// get data arrays organized and gettable.
-// calc the required array for the bar chart.
-// display the chart
-// error handling - clicks in container
-// look and feel
-// need to add reset style sheet
+* deal with invalid clicks
+* persistent local storage in place, but need to have data arrays accumulate beyond the session click limit.  
+* percent clicked per product is calced, but need to show this data on web page.
+* deploy live

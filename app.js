@@ -7,8 +7,8 @@ var firstIndex = 0;
 var secondIndex = 0;
 var thirdIndex = 0;
 var resultsButton = document.getElementById('resultsbutton');
-var clickCountArray = [];
-var displayCountArray = [];
+var barChart;
+var chartDrawn = false;
 
 // Object Constructor
 function Product(name, path) {
@@ -23,13 +23,13 @@ var banana = new Product('banana','img/banana.jpg');
 var bathroom = new Product('bathroom','img/bathroom.jpg');
 var boots = new Product('boots','img/boots.jpg');
 var usb = new Product('usb','img/usb.jpg');
-var water_can = new Product('water-can','img/water-can.jpg');
-var wine_glass = new Product('wine-glass','img/wine-glass.jpg');
+var water_can = new Product('water can','img/water-can.jpg');
+var wine_glass = new Product('wine glass','img/wine-glass.jpg');
 var chair = new Product('chair','img/chair.jpg');
 var cthulhu = new Product('cthulhu','img/cthulhu.jpg');
 var dogduck = new Product('dogduck','img/dogduck.jpg');
 var pen = new Product('pen','img/pen.jpg');
-var petsweep = new Product('petsweep','img/petsweep.jpg');
+var petsweep = new Product('petsweeper','img/petsweep.jpg');
 var tauntaun = new Product('tauntaun','img/tauntaun.jpg');
 var baby = new Product('baby','img/baby.png');
 var dragon = new Product('dragon','img/dragon.png');
@@ -103,11 +103,12 @@ function handleImageClick(event) {
     totalClicksCounter++;
     console.log('Total click count is ' + totalClicksCounter);
     localStorage.totalClicks = JSON.stringify(totalClicksCounter);
-
+    chartArrays();
   }
   else {
     resultsButton.style.display = 'block';
     alert('You have completed your tasks successfully. Thank you for your help!');
+    makeChart();
   }
 }
 
@@ -116,9 +117,42 @@ function randIndex() {
 }
 
 // =================
+//MAKE CHART
+// Arrays to hold chart data
+var products = [];
+var clicked = [];
+var displayed = [];
+var percentClicked = [];
 
-//calcs for chart display
-// A. total number of clicks, = totalClicksCounter (counts to 25 and goes no higher)
-// B. number of times product [6] was displayed = productArray[6].displayCount - got to displayCountArray = [];
-// C. number of times product [1] was clicked = productArray[1].clickCount got to var clickCountArray = [];
-// D. percentage of times item was clicked when it was shown.  D = C/B
+function chartArrays() {
+  for (var i = 0; i < productArray.length; i++) {
+    products[i] = productArray[i].name;
+    clicked[i] = productArray[i].clickCount;
+    displayed[i] = productArray[i].displayCount;
+    percentClicked[i] = (productArray[i].clickCount / productArray[i].displayCount).toFixed(2);
+  }
+}
+var data = {
+  labels: products,
+  datasets: [
+    {
+      data: clicked,
+    }]
+};
+
+function makeChart() {
+  var ctx = document.getElementById('resultschart').getContext('2d');
+  barChart = new Chart(ctx,{
+    type: 'bar',
+    data: data,
+    options: {
+      responsive: true
+    },
+    scales: {
+      yAxes: [{
+
+      }]
+    }
+  });
+  chartDrawn = true;
+}

@@ -16,7 +16,6 @@ https://cdnjs.com/libraries/Chart.js/1.0.2
 
 
 #To Do List
-* deal with invalid clicks
 * persistent local storage in place, but need to have data arrays accumulate beyond the session click limit.  
 * percent clicked per product is calced, but need to show this data on web page.
-* deploy live
+* deal with invalid clicks
